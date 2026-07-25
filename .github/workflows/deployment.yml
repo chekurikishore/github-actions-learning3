@@ -34,9 +34,9 @@ jobs:
         run: npm ci
       - name: Build project
         run: npm run build
+      - name: Output Contents
+        run: ls - R dist
       - name: Upload Artifacts
-      - name: List Output Files
-        run: ls -R dist
         uses: actions/upload-artifact@v5
         with:
           name: dist-files
