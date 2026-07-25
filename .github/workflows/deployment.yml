@@ -35,6 +35,8 @@ jobs:
       - name: Build project
         run: npm run build
       - name: Upload Artifacts
+      - name: List Output Files
+        run: ls -R dist
         uses: actions/upload-artifact@v5
         with:
           name: dist-files
@@ -50,6 +52,6 @@ jobs:
         with:
           name: dist-files
       - name: Output Contents
-        run: ls 
+        run: ls - R dist
       - name: Deploy
         run: echo "Deploying dist files..."
